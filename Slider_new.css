@@ -1,0 +1,304 @@
+
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+}
+.swipe {
+    width: 76%;
+    height: 70vh;
+    margin: 120px 12%;
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    /*border-radius: 0px 100px;*/
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+        /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+      }
+
+#back
+{
+    opacity: 0.4;
+    
+    
+}
+.swiper-pagination-bullet {
+    opacity: 1;
+    border: white solid 1px;
+    background-color: transparent;
+}
+.swiper-pagination-bullet-active {
+    background-color: rgb(31, 101, 207);
+    height: 15px;
+    width: 15px;
+  }
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.navbartag
+{
+    height: 10%;
+    width: 100%;
+    z-index: 2000;
+    color: blue;
+    position: absolute;
+    background-color: burlywood;
+}
+
+.TotalImages{
+    padding: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+  }
+  .wrapper{
+    max-width: 100%;
+  }
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .gallery .image{
+    padding: 7px;
+    width: calc(90% / 4);
+  }
+  .gallery .image span{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  .gallery .image img{
+    width: 100%;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+  }
+  .gallery .image:hover img{
+    transform: scale(1.1);
+  }
+  
+  .preview-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    max-width: 700px;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    padding: 0 5px 5px 5px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  }
+  .preview-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+  }
+  .preview-box .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .preview-box .details .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .details .title p{
+    margin: 0 5px;
+  }
+  .details .title p.current-img{
+    font-weight: 500;
+  }
+  .details .icon{
+    color: #f3f7fc;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .details .icon:hover{
+    color: red;
+  }
+  
+  .preview-box .image-box{
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+  .image-box .slide{
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    height: 50px;
+    width: 60px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .slide.prev{
+    left: 0px;
+  }
+  .slide.next{
+    right: 0px;
+  }
+  .image-box img{
+    width: 100%;
+    border-radius:10%;
+  }
+  .shadow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    background: rgba(0,0,0,0.45);
+  }
+  
+  @media (max-width:620px){
+    .Slide .container{
+        top: 0vh;
+        left: 0vh;
+        right: 0vh;
+        bottom: 0vh;
+    }
+    .backgroundslide .wrapperslide{
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+     
+  }
+  .slideimage img{
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+    text-align: center;
+  }
+  .log{
+    display: none;
+  }
+  .preview-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+  }
+  }
+  
+
+  /* For Mobile Portrait View */
+@media screen and (max-device-width: 480px)
+and (orientation: portrait) {
+    .gallery .image{
+        width: calc(100% / 1);
+      }
+      .swipe
+      {
+          height: 100%;
+          width: 100%;
+          margin: 0%;
+      }
+  
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px)
+and (orientation: landscape) {
+    .gallery .image{
+        width: 100%;
+        padding: 4px 0px;
+      }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+    .swipe
+      {
+          height: 100%;
+          width: 100%;
+          margin: 0%;
+      }
+      .gallery .image{
+        width: 100%;
+        padding: 4px 1px;
+        width: calc(100% / 2);
+      }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .gallery .image{
+        width: calc(100% / 1);
+      }
+      .swipe
+      {
+          height: 100%;
+          width: 100%;
+          margin: 0%;
+      }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .gallery .image{
+        width: calc(100% / 1);
+      }
+      .swipe
+      {
+          height: 100%;
+          width: 100%;
+          margin: 0%;
+      }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px)
+and (-webkit-min-device-pixel-ratio: 3) {
+    .gallery .image{
+        width: calc(100% / 1);
+      }
+      .swipe
+      {
+          height: 100%;
+          width: 100%;
+          margin: 0%;
+      }
+}
